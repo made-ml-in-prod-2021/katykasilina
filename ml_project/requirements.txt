@@ -1,10 +1,8 @@
-# local package
--e .
-
-# external requirements
-click
-Sphinx
-coverage
-awscli
-flake8
-python-dotenv>=0.5.1
+omegaconf==2.0.6
+marshmallow_dataclass==8.4.1
+pandas==1.2.3
+numpy==1.19.2
+hydra_core==1.0.6
+dataclasses==0.8
+hydra==2.5
+scikit_learn==0.24.2

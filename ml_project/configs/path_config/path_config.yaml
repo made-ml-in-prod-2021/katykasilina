@@ -1,0 +1,5 @@
+# @package _group_
+input_data_path: "ml_project/data/raw/heart.csv"
+output_model_path: "ml_project/models/model.pkl"
+output_transformer_path: "ml_project/models/transformer.pkl"
+metric_path: "ml_project/models/metrics.json"
