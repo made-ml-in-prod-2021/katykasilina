@@ -36,6 +36,7 @@ def train_pipeline(
 
     save_pkl_file(transformer, training_pipeline_params.path_config.output_transformer_path)
 
+
     train_features = pd.DataFrame(transformer.transform(train_df))
     train_target = get_target(train_df, training_pipeline_params.feature_params)
 
