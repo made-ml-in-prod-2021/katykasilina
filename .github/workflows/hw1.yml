@@ -2,7 +2,7 @@ name: hw1
 
 on:
   push:
-    branches: [homework1, main]
+    branches: [homework1]
   pull_request:
     branches: [main]
 
