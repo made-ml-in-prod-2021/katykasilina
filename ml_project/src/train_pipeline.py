@@ -30,6 +30,7 @@ def train_pipeline(
     logger.info(f"Train dataset shape is {train_df.shape}")
     logger.info(f"Test dataset shape is {test_df.shape}")
 
+
     logger.info("Start transformer building...")
     transformer = build_transformer(training_pipeline_params.feature_params)
     transformer.fit(train_df)
