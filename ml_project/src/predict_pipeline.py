@@ -13,7 +13,7 @@ from src.utils import *
 logger = logging.getLogger("ml_project/predict_pipeline")
 
 
-def eval_pipeline(evaluating_pipeline_params: PredictingPipelineParams):
+def predict_pipeline(evaluating_pipeline_params: PredictingPipelineParams):
     logger.info("Start prediction pipeline")
     data = read_data(evaluating_pipeline_params.input_data_path)
     logger.info(f"Dataset shape is {data.shape}")
@@ -45,7 +45,7 @@ def predict_pipeline_start(cfg: DictConfig):
     os.chdir(hydra.utils.to_absolute_path(".."))
     schema = PredictingPipelineParamsSchema()
     params = schema.load(cfg)
-    eval_pipeline(params)
+    predict_pipeline(params)
 
 
 if __name__ == "__main__":

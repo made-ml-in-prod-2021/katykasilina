@@ -5,6 +5,7 @@ from .train_pipeline_params import (
     TrainingPipelineParamsSchema,
     TrainingPipelineParams,
 )
+from .path_params import PathParams
 from .predict_pipeline_params import (
     PredictingPipelineParams,
 )
@@ -17,4 +18,5 @@ __all__ = [
     "LogRegParams",
     "RandomForestParams",
     "PredictingPipelineParams",
+    "PathParams"
 ]

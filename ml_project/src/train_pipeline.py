@@ -16,9 +16,8 @@ logger = logging.getLogger("ml_project/train_pipeline")
 
 
 def train_pipeline(
-    training_pipeline_params: TrainingPipelineParams,
+        training_pipeline_params: TrainingPipelineParams,
 ) -> Dict[str, float]:
-
     logger.info(f"Start train pipeline with params {training_pipeline_params}")
     logger.info(f"Model name is {training_pipeline_params.train_params.model_type}")
 

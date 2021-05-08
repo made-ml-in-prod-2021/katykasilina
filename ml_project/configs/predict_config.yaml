@@ -1,4 +1,4 @@
-input_data_path: "ml_project/data/raw/heart.csv"
-output_data_path: "ml_project/models/predictions.csv"
-pipeline_path: "ml_project/models/transformer.pkl"
-model_path: "ml_project/models/model.pkl"
+input_data_path: "data/raw/heart.csv"
+output_data_path: "models/predictions.csv"
+pipeline_path: "models/transformer.pkl"
+model_path: "models/model.pkl"
