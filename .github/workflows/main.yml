@@ -1,5 +1,5 @@
 
-name: CI_homework1
+name: hw1
 
 on:
   push:
