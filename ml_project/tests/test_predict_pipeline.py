@@ -1,8 +1,6 @@
 import os
 
-import pytest
-
-from src.entities import PredictingPipelineParams, TrainingPipelineParams
+from src.entities import PredictingPipelineParams
 from src.predict_pipeline import predict_pipeline
 
 

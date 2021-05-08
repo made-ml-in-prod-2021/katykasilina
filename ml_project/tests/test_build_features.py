@@ -1,7 +1,5 @@
-import os
 from typing import NoReturn
 
-import pytest
 import pandas as pd
 import numpy as np
 from sklearn.utils.validation import check_is_fitted

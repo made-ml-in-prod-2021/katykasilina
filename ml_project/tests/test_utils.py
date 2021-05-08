@@ -1,10 +1,8 @@
-import os
-
 import pandas as pd
 from sklearn.linear_model import LogisticRegression
 from sklearn.ensemble import RandomForestClassifier
 
-from src.utils import read_data, load_pkl_file, save_pkl_file
+from src.utils import read_data, load_pkl_file
 
 
 def test_read_data(synthetic_data_path: str):
