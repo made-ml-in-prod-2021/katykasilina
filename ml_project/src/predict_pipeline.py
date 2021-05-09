@@ -5,10 +5,10 @@ import pandas as pd
 from omegaconf import DictConfig
 import hydra
 
-from src.entities.predict_pipeline_params import PredictingPipelineParams, PredictingPipelineParamsSchema
+from src.entities.predict_pipeline_params import PredictingPipelineParams, \
+    PredictingPipelineParamsSchema
 from src.models import make_prediction
-from src.utils import *
-
+from src.utils import read_data, load_pkl_file
 
 logger = logging.getLogger("ml_project/predict_pipeline")
 
