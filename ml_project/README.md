@@ -25,14 +25,15 @@ Project Organization
     ├── src                <- Source code for use in this project.
     │   ├── __init__.py    <- Makes src a Python module
     │   │
-    │   ├── data           <- Scripts to download or generate data
+    │   ├── data           <- Scripts for splitting dataset to train and test
     │   │   └── make_dataset.py
     │   │
-    │   ├── entities       <- Scripts to turn raw data into features for modeling
-    │   │    └── build_features.py
+    │   ├── entities       <- Scripts for creating dataclasses
+    │   │    
     │   │
-    │   ├── features       <- Scripts to turn raw data into features for modeling
+    │   ├── features              <- Scripts to turn raw data into features for modeling
     │   │   └── build_features.py
+    |   |   └── custom_scaler.py  <- Custom scaler transformer
     │   │
     │   ├── models         <- Scripts to train models and then use trained models to make
     │   │   │                 predictions
@@ -93,6 +94,4 @@ Project Organization
     ├── configs
         └── predict_config.yaml <- Конфиг содержит пути до модели и трансформатора.
         
-Запуск построения прогноз:  `python src/predict_pipeline.py`
-
-
+Запуск построения прогноза:  `python src/predict_pipeline.py`
