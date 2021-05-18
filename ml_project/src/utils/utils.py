@@ -4,8 +4,11 @@ from typing import NoReturn
 
 import pandas as pd
 
+import os
+
 
 def read_data(path: str) -> pd.DataFrame:
+    print("CURR PATH", os.path.abspath(os.getcwd()))
     data = pd.read_csv(path)
     return data
 

@@ -7,6 +7,7 @@ import hydra
 
 from src.entities.predict_pipeline_params import PredictingPipelineParams, \
     PredictingPipelineParamsSchema
+from src.entities.train_pipeline_params import TrainingPipelineParams
 from src.models import make_prediction
 from src.utils import read_data, load_pkl_file
 
@@ -20,7 +21,10 @@ def predict_pipeline(evaluating_pipeline_params: PredictingPipelineParams):
 
     logger.info("Loading transformer...")
     transformer = load_pkl_file(evaluating_pipeline_params.pipeline_path)
-    transformed_data = pd.DataFrame(transformer.transform(data))
+
+    feature_list = evaluating_pipeline_params.feature_list
+
+    transformed_data = pd.DataFrame(transformer.transform(data[feature_list]))
 
     logger.info("Loading model...")
     model = load_pkl_file(evaluating_pipeline_params.model_path)

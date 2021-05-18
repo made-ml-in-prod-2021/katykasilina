@@ -9,6 +9,7 @@ class PredictingPipelineParams:
     output_data_path: str
     pipeline_path: str
     model_path: str
+    feature_list: list
 
 
 PredictingPipelineParamsSchema = class_schema(PredictingPipelineParams)

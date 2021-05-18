@@ -1,19 +1,24 @@
 import numpy as np
 import pandas as pd
+
 from sklearn.compose import ColumnTransformer
 from sklearn.impute import SimpleImputer
 from sklearn.pipeline import Pipeline
-from sklearn.preprocessing import OneHotEncoder
+from sklearn.preprocessing import OneHotEncoder, StandardScaler
 
 from .custom_scaler import CustomStandardScaler
 from src.entities.feature_params import FeatureParams
+
+
+from dataclasses import dataclass
+from typing import List, Optional
 
 
 def build_numerical_pipeline_w_scaler() -> Pipeline:
     num_pipeline = Pipeline(
         [
             ("imputer", SimpleImputer(missing_values=np.nan, strategy="mean")),
-            ("custom_scaler", CustomStandardScaler()),
+            ("custom_scaler", StandardScaler()),
         ]
     )
     return num_pipeline
@@ -32,7 +37,7 @@ def build_categorical_pipeline() -> Pipeline:
     categorical_pipeline = Pipeline(
         [
             ("imputer", SimpleImputer(missing_values=np.nan, strategy="most_frequent")),
-            ("ohe", OneHotEncoder(drop="if_binary")),
+            ("ohe", OneHotEncoder(handle_unknown="ignore"))
         ]
     )
     return categorical_pipeline

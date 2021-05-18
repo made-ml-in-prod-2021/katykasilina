@@ -25,11 +25,16 @@ def train_pipeline(
     train_df, test_df = split_train_val_data(data, training_pipeline_params.splitting_params)
 
     logger.info("Start transformer building...")
+    feature_list = training_pipeline_params.feature_params.categorical_features \
+                   + training_pipeline_params.feature_params.numerical_features
+
     transformer = build_transformer(training_pipeline_params.feature_params)
 
-    transformer.fit(train_df)
+    transformer.fit(train_df[feature_list])
+
     save_pkl_file(transformer, training_pipeline_params.path_config.output_transformer_path)
-    train_features = pd.DataFrame(transformer.transform(train_df))
+
+    train_features = pd.DataFrame(transformer.transform(train_df[feature_list]))
     train_target = get_target(train_df, training_pipeline_params.feature_params)
 
     logger.info("Start model training..")
@@ -38,7 +43,7 @@ def train_pipeline(
     )
     logger.info("Model training is done")
 
-    test_features = pd.DataFrame(transformer.transform(test_df))
+    test_features = pd.DataFrame(transformer.transform(test_df[feature_list]))
     test_target = get_target(test_df, training_pipeline_params.feature_params)
     predicts = make_prediction(model, test_features)
 
