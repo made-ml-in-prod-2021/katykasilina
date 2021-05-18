@@ -48,7 +48,7 @@ def test_build_features_pipeline_norm(
 
     assert np.allclose(transformed_cols, correct_synth_np)
     assert not pd.isnull(transformed_data).any().any()
-    assert (synthetic_data.shape[0], 27) == transformed_data.shape
+    assert (synthetic_data.shape[0], 30) == transformed_data.shape
 
 
 def test_build_features_pipeline_wo_norm(
@@ -68,4 +68,4 @@ def test_build_features_pipeline_wo_norm(
 
     assert np.allclose(transformed_cols, synth_data_np)
     assert not pd.isnull(transformed_data).any().any()
-    assert (synthetic_data.shape[0], 27) == transformed_data.shape
+    assert (synthetic_data.shape[0], 30) == transformed_data.shape

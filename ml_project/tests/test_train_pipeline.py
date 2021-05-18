@@ -8,7 +8,8 @@ def test_train_pipeline(
     train_pipeline_params: TrainingPipelineParams,
     metric_path: str,
     load_model_path: str,
-    load_transformer_path: str
+    load_transformer_path: str,
+    feature_list: list
 ):
 
     metrics = train_pipeline(train_pipeline_params)
