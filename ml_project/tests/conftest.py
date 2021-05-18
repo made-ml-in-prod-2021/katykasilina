@@ -61,6 +61,23 @@ def categorical_features() -> List[str]:
         "thal",
     ]
 
+@pytest.fixture(scope="session")
+def feature_list() -> List[str]:
+    return [
+        "sex",
+        "cp",
+        "fbs",
+        "restecg",
+        "exang",
+        "slope",
+        "ca",
+        "thal",
+        "age",
+        "trestbps",
+        "chol",
+        "thalach",
+        "oldpeak"
+    ]
 
 @pytest.fixture(scope="session")
 def target_col() -> str:
@@ -208,6 +225,7 @@ def predict_pipeline_params(
     load_model_path: str,
     output_predictions_path: str,
     load_transformer_path: str,
+    feature_list:list
 ) -> PredictingPipelineParams:
 
     pred_pipeline_params = PredictingPipelineParams(
@@ -215,6 +233,7 @@ def predict_pipeline_params(
         output_data_path=output_predictions_path,
         pipeline_path=load_transformer_path,
         model_path=load_model_path,
+        feature_list=feature_list
     )
     return pred_pipeline_params
 
