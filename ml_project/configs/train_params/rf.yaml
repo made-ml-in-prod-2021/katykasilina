@@ -1,5 +1,0 @@
-# @package _group_
-model_type: "RandomForestClassifier"
-n_estimators: 50
-max_depth: 5
-random_state: 21
